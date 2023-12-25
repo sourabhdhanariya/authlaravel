@@ -15,7 +15,7 @@
             <div class="col-md-4 offset-md-4">
                 <div class="card form-holder">
                     <div class="card-body">
-                        <h1>{{ trans('registraction.register.welcome') }}</h1>
+                        <h1>{{ trans('registration.register.welcome') }}</h1>
                         @if ($errors->has('error'))
                         <p class="text-danger">{{ $errors->first('error') }}</p>
                             @endif
@@ -26,44 +26,44 @@
                             @csrf
                             @method('post')
                             <div class="form-group">
-                                <label>{{ trans('registraction.register.Name') }}</label>
-                                <input type="text" name="name" class="form-control" placeholder="First Name" />
+                                <label>{{ trans('registration.register.Name') }}</label>
+                                <input type="text" name="name" class="form-control" placeholder=" {{ trans('registration.placeholder.firstname') }}" />
                                 @if ($errors->has('name'))
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 @endif
                             </div>
                           
                             <div class="form-group">
-                                <label>{{ trans('registraction.register.Last') }}</label>
-                                <input type="text" name="lastname" class="form-control" placeholder="Last Name" />
+                                <label>{{ trans('registration.register.Last') }}</label>
+                                <input type="text" name="lastname" class="form-control" placeholder="{{ trans('registration.placeholder.lastname') }}" />
                                 @if ($errors->has('lastname'))
                                     <p class="text-danger">{{ $errors->first('lastname') }}</p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>{{ trans('registraction.register.Email') }}</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email" />
+                                <label>{{ trans('registration.register.Email') }}</label>
+                                <input type="email" name="email" class="form-control" placeholder="{{ trans('registration.placeholder.email') }}" />
                                 @if ($errors->has('email'))
                                     <p class="text-danger">{{ $errors->first('email') }}</p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>{{ trans('registraction.register.Password') }}</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" />
+                                <label>{{ trans('registration.register.Password') }}</label>
+                                <input type="password" name="password" class="form-control" placeholder="{{ trans('registration.placeholder.password') }}" />
                                 @if ($errors->has('password'))
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
                                 @endif
                             </div>
                             
                             <div class="form-group">
-                                <label>{{ trans('registraction.register.Phone') }}</label>
-                                <input type="number" name="phone" class="form-control" placeholder="Contact Number" />
+                                <label>{{ trans('registration.register.Phone') }}</label>
+                                <input type="number" name="phone" class="form-control" placeholder="{{ trans('registration.placeholder.contact') }}" />
                                 @if ($errors->has('phone'))
                                     <p class="text-danger">{{ $errors->first('phone') }}</p>
                                 @endif
                             </div>
                                 <div class="col-4 text-right">
-                                    <input type="submit" class="btn btn-primary" value="Register"/>
+                                    <input type="submit" class="btn btn-primary" value="{{ trans('registration.button.register') }}"/>
                                 </div>
                             </div>
                         </form>

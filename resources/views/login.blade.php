@@ -16,7 +16,7 @@
             <div class="col-md-4 offset-md-4">
                 <div class="card form-holder">
                     <div class="card-body">
-                        <h1>Login</h1>
+                        <h1>{{ trans('registration.register.login') }}</h1>
 
                         @if ($errors->has('error'))
                         <p class="text-danger">{{ $errors->first('error') }}</p>
@@ -28,21 +28,21 @@
                             @csrf
                             @method('post')
                             <div class="form-group">
-                                <label>Email</label>
-                                <input type="email" name="email" class="form-control" placeholder="Email" />
+                                <label>{{ trans('registration.register.Email') }}</label>
+                                <input type="email" name="email" class="form-control" placeholder="{{ trans('registration.placeholder.email') }}" />
                                 @if ($errors->has('email'))
                                     <p class="text-danger">{{ $errors->first('email') }}</p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
-                                <input type="password" name="password" class="form-control" placeholder="Password" />
+                                <label>{{ trans('registration.register.Password') }}</label>
+                                <input type="password" name="password" class="form-control" placeholder="{{ trans('registration.placeholder.password') }}" />
                                 @if ($errors->has('password'))
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
                                 @endif
                             </div>
                                 <div class="col-4 text-right">
-                                    <input type="submit" class="btn btn-primary" value=" Login " />
+                                    <input type="submit" class="btn btn-primary" value=" {{ trans('registration.button.login') }} " />
                                 </div>
                             </div>
                         </form>

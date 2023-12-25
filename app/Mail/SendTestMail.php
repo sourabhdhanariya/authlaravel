@@ -34,7 +34,7 @@ class SendTestMail extends Mailable
     public function envelope()
     {
         return new Envelope(
-            subject: 'Email Send',
+            subject: trans('registration.msg.sub'),
         );
     }
 
@@ -67,7 +67,7 @@ class SendTestMail extends Mailable
      */
     public function build()
     {
-        return $this->subject('Send Test Mail')
+        return $this->subject(trans('registration.msg.sub'))
             ->view('emails.sendTestMail');
     }
 }
