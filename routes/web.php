@@ -1,7 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
+use App\Http\Controllers\UserController;
+
+use App\Mail\TestMail;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,15 +22,30 @@ Route::get('/', function () {
 });
 
 Route::group(['middleware'=>'guest'], function(){
-Route::get('login', [LoginController::class,'index'])->name('login');
-Route::post('login', [LoginController::class,'login'])->name('login')->middleware('throttle:2,1');
-Route::get('register', [LoginController::class,'registerView'])->name('register');
-Route::post('register', [LoginController::class,'register'])->name('register');
+Route::get('login', [UserController::class,'index'])->name('login');
+Route::post('login', [UserController::class,'login'])->name('login')->middleware('throttle:2,1');
+Route::get('register', [UserController::class,'registerView'])->name('register');
+Route::post('register', [UserController::class,'register'])->name('register');
 
 });
 
 Route::group(['middleware'=>'auth'], function(){
-    Route::get('home', [LoginController::class,'dashboard'])->name('dashboard');
+    Route::get('home', [UserController::class,'dashboard'])->name('dashboard');
 
-    Route::get('logout', [LoginController::class,'logout'])->name('logout');
+    Route::get('logout', [UserController::class,'logout'])->name('logout');
 });
+//mail
+// Route::get('/mail', function(){
+//     Mail::send([], [], function($msg) {
+//         $msg->from('sourabh@gmail.com', 'Your Name')
+//             ->to("test@test.com", "mail send")
+//             ->subject("hii sourabh who")
+//             ->text("Advance Laravel ");
+//     });
+//     echo "mail sent";
+// });
+// Route::get('/mail', function(){
+//     Mail::to("sourabh@gmail.com")
+//     ->send (new \App\Mail\SendTestMail());
+//     echo "mail sent";
+// });

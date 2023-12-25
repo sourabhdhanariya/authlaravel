@@ -12,12 +12,10 @@
   <body>
     <div class="container">
         <div class="row">
-
             <div class="col-md-4 offset-md-4">
                 <div class="card form-holder">
                     <div class="card-body">
-                        <h1>Register</h1>
-
+                        <h1>{{ trans('registraction.register.welcome') }}</h1>
                         @if ($errors->has('error'))
                         <p class="text-danger">{{ $errors->first('error') }}</p>
                             @endif
@@ -28,7 +26,7 @@
                             @csrf
                             @method('post')
                             <div class="form-group">
-                                <label>First Name</label>
+                                <label>{{ trans('registraction.register.Name') }}</label>
                                 <input type="text" name="name" class="form-control" placeholder="First Name" />
                                 @if ($errors->has('name'))
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
@@ -36,21 +34,21 @@
                             </div>
                           
                             <div class="form-group">
-                                <label>Last Name</label>
+                                <label>{{ trans('registraction.register.Last') }}</label>
                                 <input type="text" name="lastname" class="form-control" placeholder="Last Name" />
                                 @if ($errors->has('lastname'))
                                     <p class="text-danger">{{ $errors->first('lastname') }}</p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label>{{ trans('registraction.register.Email') }}</label>
                                 <input type="email" name="email" class="form-control" placeholder="Email" />
                                 @if ($errors->has('email'))
                                     <p class="text-danger">{{ $errors->first('email') }}</p>
                                 @endif
                             </div>
                             <div class="form-group">
-                                <label>Password</label>
+                                <label>{{ trans('registraction.register.Password') }}</label>
                                 <input type="password" name="password" class="form-control" placeholder="Password" />
                                 @if ($errors->has('password'))
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
@@ -58,14 +56,14 @@
                             </div>
                             
                             <div class="form-group">
-                                <label>Contact Name</label>
+                                <label>{{ trans('registraction.register.Phone') }}</label>
                                 <input type="number" name="phone" class="form-control" placeholder="Contact Number" />
                                 @if ($errors->has('phone'))
                                     <p class="text-danger">{{ $errors->first('phone') }}</p>
                                 @endif
                             </div>
                                 <div class="col-4 text-right">
-                                    <input type="submit" class="btn btn-primary" value=" Login " />
+                                    <input type="submit" class="btn btn-primary" value="Register"/>
                                 </div>
                             </div>
                         </form>
